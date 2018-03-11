@@ -16,7 +16,7 @@
         switch (lang) {
           case 'all':
             {
-              let p = document.body.querySelectorAll('p[lang],h2[lang]');
+              let p = document.body.querySelectorAll('*[lang]');
               p.forEach(d => {
                 d.style.display = '';
               });
@@ -25,11 +25,11 @@
             break;
           default:
           {
-            let p = document.body.querySelectorAll(`p[lang],h2[lang]`);
+            let p = document.body.querySelectorAll(`*[lang]`);
               p.forEach(d => {
                 d.style.display = 'none';
               });
-              p = document.body.querySelectorAll(`p[lang="${lang}"],h2[lang="${lang}"]`);
+              p = document.body.querySelectorAll(`*[lang="${lang}"]`);
               p.forEach(d => {
                 d.style.display = '';
               });
