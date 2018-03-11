@@ -7,6 +7,9 @@
     #menu {
       text-align: right;
     }
+    .bq{
+      border: 1px solid red;
+    }
   </style>
   <script>
     window.addEventListener('load', () => {
@@ -59,7 +62,10 @@
       </select>
     </div>
     <h1 id="top-down-operator-precedence">Top Down Operator Precedence</h1>
-
+    <blockquote class="bq">
+        この文章は翻訳中です。また翻訳には誤りを含んでいる可能性があります。
+      </blockquote> 
+  
     <p>Vaughan R. Pratt
       <br> Massachusetts Institute of Technology 1973</p>
     <hr />
@@ -193,12 +199,17 @@
       </ol>
 
       <h2 id="2-three-syntactic-issues" lang="en">2. Three Syntactic Issues</h2>
+      <h2 id="2-three-syntactic-issues" lang="ja">2. 3つの構文上の問題</h2>
 
-      <p>To cope with unanticipated syntactic needs, we adopt the simple expedient of allowing the language implementer to write
+      <p lang="en">To cope with unanticipated syntactic needs, we adopt the simple expedient of allowing the language implementer to write
         arbitrary programs. By itself, this would represent a long step backwards; instead, we offer in place of the rigid
         structure of a BNF-oriented meta-language a modicum of supporting software, and a set of guidelines on how to write
         modular, efficient, compact and comprehensible translators and interpreters while preserving the impression that
         one is really writing a grammar rather than a program.</p>
+
+      <p lang="ja">
+          予期しない構文上のニーズに対処するために、我々は言語実装者が任意のプログラムを書くことを可能にする簡単な手段を採用します。それ自身によって、これは後ろ向きの長い歩みを表します。代わりに、BNF指向のメタ言語の堅牢な構造の代わりに、支援ソフトウェアの小冊子、モジュラーで効率的でコンパクトで分かりやすい翻訳者と通訳の作成方法に関するガイドラインを用意しています。実際にはプログラムではなく文法を書く。
+      </p>
       <p>The guidelines are based on some elementary assumptions about the primary syntactic needs of the average programmer.</p>
       <p>First, the programmer already understands the semantics of both the problem and the solution domains, so that it would
         seem appropriate to tailor the syntax to fit the semantics. Current practice entails the reverse.</p>
