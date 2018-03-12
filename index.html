@@ -208,21 +208,34 @@
         one is really writing a grammar rather than a program.</p>
 
       <p lang="ja">
-          予期しない構文上のニーズに対処するために、我々は言語実装者が任意のプログラムを書くことを可能にする簡単な手段を採用します。それ自身によって、これは後ろ向きの長い歩みを表します。代わりに、BNF指向のメタ言語の堅牢な構造の代わりに、支援ソフトウェアの小冊子、モジュラーで効率的でコンパクトで分かりやすい翻訳者と通訳の作成方法に関するガイドラインを用意しています。実際にはプログラムではなく文法を書く。
+          予期しない構文上のニーズに対処するために、言語実装者が自由にプログラムを書くことを可能にする簡単な手段を採用します。それ自体は、<small>（訳注：技術的な？）</small>後退を表しています。その代わりに、BNF指向のメタ言語の堅牢な構造の代わりに、小さなサポート・ソフトウェア、および実際にプログラムではなく文法を書くことを維持しながら、トランスレータととインタプリタをモジュラーで効率的でコンパクトでわかりやすく書くためのガイドラインを提供します。
       </p>
-      <p>The guidelines are based on some elementary assumptions about the primary syntactic needs of the average programmer.</p>
-      <p>First, the programmer already understands the semantics of both the problem and the solution domains, so that it would
-        seem appropriate to tailor the syntax to fit the semantics. Current practice entails the reverse.</p>
-      <p>Second, it is convenient if the programmer can avoid having to make up a special name for every object his program
+
+      <p lang="en">The guidelines are based on some elementary assumptions about the primary syntactic needs of the average programmer.</p>
+
+      <p lang="ja">このガイドラインは、平均的なプログラマの主要な構文上の必要性に関するいくつかの基本的な前提に基づいています。</p>
+      
+      <p lang="en">First, the programmer already understands the semantics of both the problem and the solution domains, so that it would seem appropriate to tailor the syntax to fit the semantics. Current practice entails the reverse.</p>
+
+      <p lang="ja">まず、プログラマは問題と解決領域のセマンティクスをすでに理解しているので、セマンティクスに合うように構文を調整することが適切であると思われます。現在の取り組みはその逆を伴います。</p>
+
+      <p lang="en">Second, it is convenient if the programmer can avoid having to make up a special name for every object his program
         computes. The usual way to do this is to let the computation itself name the result -- e.g. the object which is the
         second argument of
         <code>+</code> in the computation
         <code>a+b*c</code> is the result of the computation
         <code>b*c</code>. We may regard the relation "is an argument of" as defining a class of trees over computations; the program then
         contains such trees, which need conventions for expressing linearly.</p>
+      
+
+      <p lang="ja">
+          第2に、プログラムが計算するすべてのオブジェクトに特別な名前をつけなくても済むようにすれば便利です。これを行うために通常は計算自体に結果の名前を付けます。たとえば 計算<code>a+b*c</code>の<code>+</code>第二引数は<code>b*c</code>の結果です。私たちは計算上でツリーのクラスの定義として "の引数である"と考えるかもしれません。プログラムはそのようなツリーを含み、線形に表現するための規則を必要とします。
+      </p>
+
       <p>Third, semantic objects may require varying degrees of annotation at each invocation, depending on how far the particular
-        invocation differs in intent from the norm [e.g. for loops that don't start from 1, or don't step by 1). The programmer
-        needs to be able to formulate these annotations within the programming language.</p>
+          invocation differs in intent from the norm [e.g. for loops that don't start from 1, or don't step by 1). The programmer
+          needs to be able to formulate these annotations within the programming language.</p>
+  
       <p>There are clearly many more issues than these in the design of programming languages. However, these seem to be the
         ones that have a significant impact on the syntax aspects. Let us now draw inferences from the above assumptions.</p>
 
