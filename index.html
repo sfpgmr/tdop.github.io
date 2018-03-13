@@ -426,7 +426,9 @@
         <code>r<sub>A</sub></code> or
         <code>r<sub>B</sub></code> may depend on the type of
         <code>E</code>, further complicating matters.</p>
-
+        <p lang="ja" class="machine-trans">
+          簡単なコンベンションはE、常に左に関連付けると言うことです。しかし、print a + bそれは、それがa仲間で+はなく、仲間であることは明らかですprint。その理由は、通常は算術値を返さない手順である(print a) + b従来の意味を全く持たないからprintです。選択は、右の引数、左の引数、およびそれぞれが返すprint (a + b)型のデータ型を考慮に入れて行いました。したがって、協会はこれら4種類（それらを呼び出すの関数であり、引数のためのそれぞれつながるとも考慮にもちろん法的な強制型変換（暗黙の型変換を）取る）、時には両方の関連は理にかなって、時にはどちらも。また、print+aA, rA, aB, rBABrAまたは種類によりますが、さらに複雑な問題があります。rBE
+        </p>
       <p lang="en">One way to resolve the issue is simply to announce the outcome in advance for each pair
         <code>A</code> and
         <code>B</code>, basing the choices on some reasonable heuristics. Floyd [1963] suggested this approach, called operator precedence.
@@ -436,16 +438,25 @@
         <code>E</code> is associated with the argument position having the higher number. Ties need never occur if the numbers are assigned
         carefully; alternatively, ties may be broken by associating to the left, say. Floyd showed that Algol 60 could be
         so treated.</p>
-      <p lang="en">One objection to this approach is that there seems to be little guarantee that one will always be able to find a set
-        of numbers consistent with one's needs. Another obeection is that the programmer has to learn as many numbers as
-        there are argument positions, which for a respectable language may be the order of a hundred. We present an approach
-        to language design which simultaneously solves both these problems, without unduly restricting normal usage, yet
-        allows us to retain the numeric approach to operator precedence.</p>
+        <p lang="ja" class="machine-trans">
+          問題を解決する1つの方法は、各ペアのために、事前に結果を発表するだけである<code>A</code>と<code>B</code>、いくつかの合理的な経験則上の選択肢を基づか。Floyd [1963]は、オペレータ優先順位と呼ばれるこのアプローチを提案した。結果はテーブルに保存されました。Floydはまた、少数のケースで動作するこのテーブルをエンコードする方法を提案しました。つまり、トークン上の優先順位関数によって各引数の位置に数値を関連付ける必要があります。これらの数字は「バインディング・パワー」と呼ばれることもあります。次に<code>E</code>、より高い番号を持つ引数位置に関連付けられます。番号が慎重に割り当てられている場合、ネクタイは決して発生する必要はありません。代わりに、ネクタイは左に関連付けることで壊れるかもしれません。Floydは、Algol 60がそのように扱われることを示した。
+        </p>
+        
+      <p lang="en">One objection to this approach is that there seems to be little guarantee that one will always be able to find a set of numbers consistent with one's needs. Another obeection is that the programmer has to learn as many numbers as there are argument positions, which for a respectable language may be the order of a hundred. We present an approach to language design which simultaneously solves both these problems, without unduly restricting normal usage, yet allows us to retain the numeric approach to operator precedence.</p>
+
+      <p lang="ja" class="machine-trans">
+        このアプローチの1つの反対意見は、自分のニーズに合った一連の数字を常に見つけることができるという保証はほとんどないようです。もう一つの考え方は、プログラマは、引数の位置と同じ数の番号を学習しなければならないということです。これは、尊敬できる言語の場合、数百に達する可能性があります。私たちは、通常の使用法を過度に制限することなく、これらの問題を同時に解決する言語設計のアプローチを提示しますが、演算子の優先順位に対する数値的アプローチを維持できます。        
+      </p>
+      
       <p lang="en">The idea is to assign data types to classes and then to totally order the classes. An example might be, in ascending
         order, Outcomes (e.g., the pseudo-result of
         <code>print</code>), Booleans, Graphs (e.g. trees, lists, plexes), Strings, Algebraics (e.g. integers, complex nos, polynomials, real
         arrays) and References (as on the left side of an assignment.) We write
         <code>Strings &lt; References</code>, etc.</p>
+      <p lang="ja" class="machine-trans">
+        アイデアは、データ型をクラスに割り当て、クラスを完全に並べ替えることです。例えば、昇順で、結果（擬似結果<code>print</code>）、ブーリアン、グラフ（木、リスト、プレックスなど）、文字列、代数（整数、複合nos、多項式、実数配列）や参考文献課題の左側にあるよう<code>Strings &lt; References</code>に）書くなど        
+      </p>
+
       <p lang="en">We now insist that the class of the type at any argument that might participate in an association problem not be less
         than the class of the data type of the result of the function taking that argument. This rule applies to coercions
         as well. Thus we may use
@@ -454,6 +465,10 @@
         <code>x</code> is a string or a graph) since the argument type is less than the result type. However,
         <code>|x|</code> would be an acceptable substitute for
         <code>length x</code> as its argument cannot participate in an association problem.</p>
+        <p lang="ja" class="machine-trans">
+          連合問題に関与する可能性がある引数の型のクラスが、その引数を取った関数の結果のデータ型のクラスより小さくならないようにする必要があります。このルールは強制的に強制にも適用されます。したがって、私たちが使用する可能性<code>&lt;</code>、その引数の型（Algebraics）は、各その結果型よりも大きいので、（ブール値。）私たちは書き込みしないことがあり<code>length x</code>（ここで、x引数の型が、結果の型よりも小さいので、文字列やグラフです）。しかし、その議論が連合問題に参加することができない<code>|x|</code> ので、受け入れられる代用品となるだろう <code>length x</code>。          
+        </p>
+        
       <p lang="en">Finally, we adopt the convention that when all four data types in an association are in the same class, the association
         is to the left.</p>
       <p lang="en">These restrictions on the language, while slightly irksome, are certainly not as demanding as the LISP restriction
