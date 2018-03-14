@@ -259,30 +259,21 @@
       <h3 id="21-lexical-semantics-versus-syntactic-semantics" lang="en">2.1 Lexical Semantics versus Syntactic Semantics</h3>
       <h3 id="21-lexical-semantics-versus-syntactic-semantics-ja" lang="ja">2.1 レキシカルセマンティクスとシンタックスセマンティクス</h3>
 
-      <p lang="en">The traditional mechanism for assigning meanings to programs is to associate semantic rules with phrase-structure rules,or
-        equivalently, with classes of phrases. This is inconsistent with the following reasonable model of a programmer.</p>
+      <p lang="en">The traditional mechanism for assigning meanings to programs is to associate semantic rules with phrase-structure rules,or equivalently, with classes of phrases. This is inconsistent with the following reasonable model of a programmer.</p>
 
-      <p lang="ja" class="machine-trans">プログラムに意味を割り当てる従来のメカニズムは、セマンティックルールをフレーズ構造のルールに、または同等にフレーズのクラスに関連付けることです。これはプログラマの次の合理的なモデルと矛盾します。</p>
+      <p lang="ja" >セマンティクスをプログラムに割り当てる従来のメカニズムは、セマンティックルールとフレーズ構造のルールまたは同等のフレーズのクラスに関連付けることです。これはプログラマの次の合理的なモデルとの一貫性がありません。</p>
 
-      <p lang="en">The programmer has in mind a set of semantic objects. His natural inclination is to talk about them by assigning them
-        names, or tokens. He then makes up programs using these tokens, together with other tokens useful for program control,
-        and some purely syntactic tokens. (No clear-cut boundary separates these classes.) This suggests that it is more
-        natural to associate semantics with tokens than with classes of phrases.</p>
-      <p lang="ja" class="machine-trans">プログラマは、セマンティックオブジェクトのセットを念頭に置いています。彼の自然な傾向は、名前やトークンを割り当てて話すことです。次に、これらのトークンと、プログラム制御に役立つ他のトークンと、純粋に構文トークンを使用するプログラムを作成します。（明確な境界線はこれらのクラスを分離しない）。これは、フレーズのクラスよりもセマンティクスをトークンと関連付ける方が自然であることを示唆している。</p>
+      <p lang="en">The programmer has in mind a set of semantic objects. His natural inclination is to talk about them by assigning them names, or tokens. He then makes up programs using these tokens, together with other tokens useful for program control, and some purely syntactic tokens. (No clear-cut boundary separates these classes.) This suggests that it is more natural to associate semantics with tokens than with classes of phrases.</p>
 
-      <p lang="en" >This argument is independent of whether we specify program control explicitly, as in Algol-like languages, or implicitly,as in Planner-Conniver-like languages. In either case, the programmer wants to express his instructions or intentions
-        concerning certain objects.</p>
+      <p lang="ja">プログラマは、セマンティックオブジェクトのセットを念頭に置いています。彼の自然な傾向は、それに名前やトークンを割り当てて話すことです。次に、これらのトークンと、プログラム制御に役立つ他のトークンと、純粋に構文トークンを使用するプログラムを作成します。（これらのクラスを分離する明確な境界線はありません）。このことはフレーズのクラスよりもセマンティクスとトークンを関連付ける方が自然であることを示唆しています。</p>
 
-        <p lang="ja" class="machine-trans">この引数は、Algolのようなプログラム制御を明示的に指定するのかPlanner-Conniverのように暗黙的に指定するのかとは無関係です。どちらの場合でも、プログラマは、特定のオブジェクトに関する指示や意図を表現したいと考えています。</p>
+      <p lang="en" >This argument is independent of whether we specify program control explicitly, as in Algol-like languages, or implicitly,as in Planner-Conniver-like languages. In either case, the programmer wants to express his instructions or intentions concerning certain objects.</p>
+
+        <p lang="ja">この議論は、Algolのようなプログラム制御を明示的に指定するのかPlanner-Conniverのように暗黙的に指定するのかとは無関係です。どちらの場合でも、プログラマは、特定のオブジェクトに関する指示や意図を表現したいと考えています。</p>
           
-      <p lang="en">When a given class of phrases is characterized unambiguously by the presence of a particular token, the effect is the
-        same, but this is not always the case in a BNF-style semantic specification, and I conjecture that the difficulty
-        of learning and using a given language specified with a BNF grammar increases in proportion to the number of rules
-        not identifiable by a single token. The existence of an operator grammar [Floyd 1963] for Algol 60 provides a plausible
-        account of why people succeed in learning Algol, a process known not to be strongly correlated with whether they
-        have seen the BNF of Algol.</p>
+      <p lang="en">When a given class of phrases is characterized unambiguously by the presence of a particular token, the effect is the same, but this is not always the case in a BNF-style semantic specification, and I conjecture that the difficulty of learning and using a given language specified with a BNF grammar increases in proportion to the number of rules not identifiable by a single token. The existence of an operator grammar [Floyd 1963] for Algol 60 provides a plausible account of why people succeed in learning Algol, a process known not to be strongly correlated with whether they have seen the BNF of Algol.</p>
 
-        <p lang="ja" class="machine-trans">与えられたクラスのフレーズが特定のトークンの存在によって明確に特徴づけられるとき、その効果は同じであるが、これはBNFスタイルのセマンティック仕様で常に当てはまるとは限らず、 BNF文法で指定された言語は、単一のトークンでは識別できない規則の数に比例して増加します。Algol 60の演算子文法[Floyd 1963]の存在は、人々がAlgolのBNFを見たかどうかと強く相関しないことが知られているAlgolの学習に成功した理由を説明します。</p>
+        <p lang="ja" class="machine-trans">与えられたクラスのフレーズが特定のトークンの存在によって明確に特徴づけられるとき、その効果は同じであるが、これはBNFスタイルのセマンティック仕様においてかならずしも当てはまるとは限らず、 BNF文法で記述された言語を学習し理解する難しさは、単一のトークンでは識別できない規則の数に比例して増加するのではないかと推測しています。Algol 60の演算子文法[Floyd 1963]の存在は、Algolの学習に成功した理由を説明します、人々がAlgolのBNFを見たかどうかと強く相関しないことが知られている。</p>
   
         <p lang="en">There are two advantages of separating semantics from syntax in this way. First, phrase-structure rules interact more
         strongly than individual tokens because rules can share non-terminals whereas tokens have nothing to share. So our
