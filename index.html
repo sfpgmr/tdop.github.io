@@ -471,17 +471,30 @@
         
       <p lang="en">Finally, we adopt the convention that when all four data types in an association are in the same class, the association
         is to the left.</p>
+
+        <p lang="ja" class="machine-trans">
+            最後に、アソシエーション内の4つのデータ型がすべて同じクラスにある場合、そのアソシエーションが左側にあるという規約を採用します。
+        </p>
+        
       <p lang="en">These restrictions on the language, while slightly irksome, are certainly not as demanding as the LISP restriction
         that every expression have parentheses around it. Thus the following theorem should be a little surprising, since
         it implies that the programmer never need learn
         <em>any</em> associations!</p>
+        <p lang="ja" class="machine-trans">
+            これらの言語に対する制限は、少し不快ではあるが、すべての式がその周りに括弧を付けているというLISPの制限ほど厳しいものではない。したがって、以下の定理は少し驚くべきことである。なぜなら、それはプログラマーがいかなる関連も学ぶ必要がないことを意味するからである。 
+        </p>
+        
 
-      <h4 id="theorem-1">Theorem 1</h4>
+      <h4 id="theorem-1" lang="en">Theorem 1</h4>
+      <h4 id="theorem-1-ja" lang="ja">定理1</h4>
 
       <p lang="en">Given the above restrictions, every association problem has at most one solution consistent with the data types of
         the associated operators.</p>
-
-      <h4 id="proof">Proof</h4>
+        <p lang="ja" class="machine-trans">
+            上記の制限が与えられれば、すべての関連問題は、最大でも1つの解決策が関連する演算子のデータ型と一致します。
+        </p>
+      <h4 id="proof" lang="en">Proof</h4>
+      <h4 id="proof-ja" lang="ja">証明</h4>
 
       <p lang="en">Let
         <code>...AEB...</code> be such a problem, and suppose
@@ -507,14 +520,25 @@
         <code>B</code> as well.
         <span style="float: right">∎</div>
       </p>
+      <p lang="ja" class="machine-trans">
+          ...AEB...そのような問題になりましょう、と仮定Eして、両方Aと関連付けるかもしれませんB。それゆえ、強制は非増加であり、結果の型クラスは明白な帰納的証明よりも大きくないのでE、（型が入っている）ため、またためで、同様に。このように、と、つまり、4つのすべては、同じクラスです。しかし、この場合の規則はそれがあると関連付ける必要があり、当社の仮定矛盾する、と関連付けることができ、同様に。∎A [aA] ≧ [rA] ≧ [aB] ≧ [rB]xclass[x]...AE[rA]EB[aB] ≧ [rB] ≧ [aA] ≧ [rA][aA] = [aB][rA] = [rB][aA] = [rB]EAEB
+      </p>
       <p lang="en">This theorem implies that the programmer need not even think about association except in the homogeneous case (all
         four types in the same class), and then he just remembers the left-associativity rule. More simply, the rule is "always
         associate to the left unless it doesn't make sense".</p>
+        <p lang="ja" class="machine-trans">この定理は、同型の場合（同じクラスの4つのタイプすべて）以外の関連についても考える必要はなく、左結合ルールを覚えていることを意味します。もっと簡単に言えば、ルールは「必ずしも意味をなさない限り、左に関連付ける」ことです。</p>
+        
+
       <p lang="en">What he does have to remember is how to write expressions containing a given token (e.g. he must know that one writes
         <code>|x|</code>, not
         <code>length x</code>) and which coercions are allowed. These sorts of facts are quite modular, being contained in the description of
         the token itself independently of the properties of any other token, and should certainly be easier to remember than
         numbers associated with each argument.</p>
+        
+        <p lang="ja" class="machine-trans">
+            彼が覚えておかなければならないのは、与えられたトークンを含む式を書く方法です（例えば、彼が書き込むことを知っていなければなりませ|x|んlength x）。これらの種類の事実はかなりモジュール化されており、他のトークンのプロパティとは独立してトークン自体の記述に含まれており、各引数に関連付けられた数字よりも覚えやすいものでなければなりません。
+        </p>
+
       <p lang="en">Given all of the above, the obvious way to parse strings (i.e. recover their trees) is, for each association problem,
         to associate to the left unless this yields semantic nonsense. Unfortunately, nonsense testing requires looking up
         the types
@@ -524,11 +548,18 @@
         <code>a<sub>B</sub></code>. For translation this is not serious, but for interpretation it might slow things down significantly. Fortunately,
         there is an efficient solution that uses operator precedence functions.</p>
 
-      <h4 id="theorem-2">Theorem 2</h4>
+        <p lang="ja" class="machine-trans">
+            上記をすべて踏まえれば、文字列を解析する（つまり、ツリーを復元する）明白な方法は、各関連問題のために、意味的なナンセンスを生じさせない限り、左に関連付けることです。残念ながら、ナンセンステストは種類を調べる必要としてから強制の有無を確認します。翻訳の場合、これは深刻ではありませんが、解釈のために事態を著しく遅くする可能性があります。幸いにも、演算子優先順位関数を使用する効率的なソリューションがあります。rAaBrAaB          
+        </p>        
+
+      <h4 id="theorem-2" lang="en">Theorem 2</h4>
+      <h4 id="theorem-2-ja" lang="ja">定理 2</h4>
 
       <p lang="en">Given the above restrictions on a language, there exists an assignment of integers to the argument positions of each
         token in the language such that the correct association, if any, is always in the direction of the argument position
         with the larger number, with ties being broken to the left.</p>
+
+        <p lang="ja" class="machine-trans">言語上の上記の制限が与えられると、言語内の各トークンの引数位置に整数が割り当てられ、正しいアソシエーションが存在する場合には常により大きな数の引数位置の方向にあり、ネクタイは左に壊れた。</p>        
 
       <h4 id="proof_1">Proof</h4>
 
@@ -538,6 +569,9 @@
         argument and result types. To see that this assignment has the desired property, consider the homogeneous and non-homogeneous
         cases in the problem
         <code>...AEB...</code> as before.</p>
+
+        <p lang="ja" class="machine-trans">最初にデータ型クラスに偶数の整数を割り当てます（次の補間のためのスペースを確保するため）。次に、各引数の位置に、引数と結果の型のクラスに対応する整数の間に（可能な場合は）厳密に存在する整数を割り当てます。この割り当てに望ましい特性があることを確認するには、...AEB...以前のように問題の均質および非均質のケースを考えます。</p>        
+        
       <p lang="en">In the homogeneous case all four types are in the same class and so the two numbers must be equal, resulting in left
         association as desired. If two of the data types are in different classes, then one of the inequalities in
         <code>[a<sub>A</sub>] ≧ [r<sub>A</sub>] ≧ [a<sub>B</sub>] ≧ [r<sub>B</sub>]</code> (assuming
@@ -554,15 +588,24 @@
         <code>B</code>, completing the proof.
         <span style="float: right">∎</div>
       </p>
+
+      <p lang="ja" class="machine-trans">同種の場合、4つの型はすべて同じクラスにあり、したがって2つの数は等しい必要があり、その結果、必要に応じて左の関連付けが行われます。データ型のうちの2つが異なるクラスにある場合は、（従属関係を前提とする）不等式の1つが厳密でなければなりません。最初または3番目の不等式であれば、引数は異なる引数と結果の型クラス番号の間にある厳密な条件のために厳密にs より大きくなければなりません。それは第二の不等式がある場合は、その後の数がより大きいので、s 'はさんは型クラスの数がより多い結果と引数s 1 "。関連があれば同様の議論が成立し、証拠を完成させる。∎[aA] ≧ [rA] ≧ [aB] ≧ [rB]EAABABABEB</p>        
+      
       <p lang="en">Thus Theorem 1 takes care of what the programmer needs to know, and Theorem 2 what the computer needs to know. In the
         former case we are relying on the programmer's familiarity with the syntax of each of his tokens; in the latter,
         on the computer's agility with numbers. Theorem 2 establishes that the two methods are equivalent.</p>
+
+        <p lang="ja" class="machine-trans">したがって、定理1はプログラマが知る必要のあるものを扱い、定理2はコンピュータが知る必要があるものを扱う。前者の場合、プログラマーは各トークンの構文に精通しています。後者では、数値によるコンピュータの俊敏性に基づいています。定理2は、2つの方法が同等であることを確立する。</p>        
+        
       <p lang="en">Exceptions to the left association rule for the homogeneous case may be made for classes as a whole without upsetting
         Theorem 2. This can be done by decrementing by 1 the numbers for argument positions to the right of all semantic
         tokens in that class, that is, the right binding powers. Then the programmer must remember the classes for which
         the exception holds. Applying this trick to some tokens in a class but not to others gives messy results, and so
         does not seem worth the extra effort required to remember the affected tokens.</p>
-      <p lang="en">The non-semantically motivated conventions about
+
+        <p lang="ja" class="machine-trans">正則の場合の左結合ルールの例外は、クラス全体について、定理2を惑わさずに行うことができる。これは、そのクラスのすべての意味トークンの右にある引数の位置の数を1減らすことによって、右の拘束力。プログラマーは、例外が保持するクラスを覚えていなければなりません。このトリックをクラス内のトークンに適用しますが、他のトークンには適用しないので、影響を受けるトークンを覚えておくのに必要な余分な労力に見合うようには見えません。</p>        
+
+        <p lang="en">The non-semantically motivated conventions about
         <code>and</code>,
         <code>or</code>,
         <code>+</code> and
@@ -573,6 +616,9 @@
         <code>*</code> over factors and
         <code>↑</code> over primaries, with coercions allowed from primaries to factors to terms. To be consistent with Algol, the primaries
         should be a right associative class.</p>
+
+        <p lang="ja" class="machine-trans">非意味的動機に関する規則and、or、+および↑さらに擬似クラス、例えばに適切なクラス（ここでブールとAlgebraics）を細分化することによって実現されてもよいterms &lt;factors &lt; primaries次いでアルゴル60のためのBNFのように+、用語上に定義されている*要素の上及び↑プライマリからファクタへの変換が許可されています。Algolと一貫性を持たせるためには、プライマリは正しい結合クラスでなければなりません。</p>        
+        
       <p lang="en">While these remarks are not essential to the basic approach, they do provide a sense in which operator precedence is
         more than just an ad hoc solution to the association problem. Even if the language designers find these guidelines
         too restrictive, it would not contradict the fact that operator precedence is in practice a quite satisfactory solution,
@@ -581,18 +627,27 @@
         with the above while retaining the use of precedence functions. The approach of recomputing the precedence functions
         for every operator after one change to the grammar is not modular, and does not allow flexible access to individual
         items in a library of semantic tokens.</p>
+
+        <p lang="ja" class="machine-trans">これらの発言は基本的なアプローチには必須ではありませんが、オペレータの優先順位は関連問題の臨時解決以上のものです。たとえ言語設計者がこれらのガイドラインをあまりにも厳しくしていても、オペレータの優先順位は実際には非常に満足できる解決策であるという事実と矛盾しないでしょう、理論的な正当性が合理的であるかどうかにかかわらず、それにもかかわらず、優先度関数の使用を維持しながら、上記に匹敵する程度のモジュール性を提供する、より限定的ではない慣習の集合を見ることに興味があるだろう。1つの文法変更後にすべての演算子の優先順位関数を再計算するアプローチはモジュール式ではなく、意味トークンのライブラリ内の個々の項目に柔軟にアクセスすることはできません。</p>        
+        
       <p lang="en">An attractive alternative to precedence functions would be to dispose of the ordering and rely purely on the data types
         and legal coercions to resolve associations. Cases which did not have a unique answer would he referred back to the
         programmer, which would be acceptable in an on-line environment, but undesirable in batch mode. Our concern about
         efficiency for interpreters could be dealt with by having the outcome of each association problem marked at its occurrence,
         to speed things up on subsequent encounters. Pending such developments, operator precedence seems to offer the best
         overall compromise in terms of modularity, ease of use and memorizing, and efficiency.</p>
+
+        <p lang="ja" class="machine-trans">優先順位関数の魅力的な代替案は、注文を処理し、純粋にデータ型と法的強制に依存して関連を解決することです。ユニークな答えをもたないケースでは、オンライン環境では受け入れられるが、バッチモードでは望ましくないプログラマーに回帰してもらうだろう。通訳者の効率性に対する私たちの懸念は、各会合の問題の発生をその発生時にマークし、その後の出会いで物事をスピードアップすることによって対処することができます。このような開発がなされるまで、演算子の優先順位は、モジュール性、使いやすさと記憶力、効率性の面で最高の総合的な妥協点を提供するようです。</p>        
+        
       <p lang="en">The theorems of this section may be interpreted as theorems about BNF grammars, with the non-terminals playing the
         role of data type classes. However, this is really a draw-back of BNF; the non-terminals tempt one to try to say
         everything with just context-free rules, which brings on the difficulties mentioned in Section 1. It would seem preferable
         to refer to the semantic objects directly rather than to their abstraction in an inadequate language.</p>
 
-      <h3 id="23-annotation">2.3 Annotation</h3>
+        <p lang="ja" class="machine-trans">このセクションの定理は、非終端記号がデータ型クラスの役割を果たすBNF文法に関する定理として解釈されるかもしれない。しかし、これは本当にBNFの欠点です。非終端記号は文脈自由な規則だけですべてを言うように誘惑し、第1節で述べた困難をもたらす。不適切な言語で抽象化するのではなく、意味論的オブジェクトを直接参照する方が好ましいと思われる。</p>        
+
+      <h3 id="23-annotation" lang="en">2.3 Annotation</h3>
+      <h3 id="23-annotation-ja" lang="ja">2.3 Annotation</h3>
 
       <p lang="en">When a token has more than two arguments, we lose the property of infix notation that the arguments are delimited.
         This is a nice property to retain, partly for readability, partly because complications arise, e.g., if
@@ -603,6 +658,9 @@
         1 and 2, since the string of tokens and arguments including the two arguments at each end plays the same syntactic
         role as the single semantic token in the two argument case. We shall call the semantic tokens associated with a delimiter
         its parents.</p>
+
+        <p lang="ja" class="machine-trans">トークンが3つ以上の引数を持つ場合、引数が区切られている中置表記の特性が失われます。これは、可読性のために、部分的には複雑さが生じるために保持するのが良い性質です。例えば、ifを-中置演算子と接頭演算子の両方として使用する場合などです。(また、このプロパティは、接頭辞として、アプリケーションを示す中置として、ノーオペレーションを有する。したがって、すべての引数を少なくとも1つのトークンで区切る必要があります。そのような文法Floyd [1963]はオペレータ文法を呼び出す。引数の数が固定されていれば、各端の2つの引数を含むトークンと引数の文字列が単一の意味トークンと同じ構文的役割を果たすので、定理1と2の余分な引数によって暴力が行われないことは明らかである2つの議論のケースでは、区切り文字に関連するセマンティックトークンをその親と呼ぶことにする。</p>
+        
       <p lang="en">An obvious choice of delimiters is commas. However, this is not as valuable as a syntactic token that documents the
         role of the argument following it. For example,
         <code>if a then b else c</code> is more readable (by a human) then
@@ -612,6 +670,9 @@
         <code>log x base b</code>,
         <code>solve e using m</code>,
         <code>x between y and z</code>, etc.</p>
+
+        <p lang="ja" class="machine-trans">>区切り文字の明白な選択はカンマです。しかし、これはそれに続く引数の役割を文書化する構文トークンほど価値がありません。たとえば、if a then b else c（人間によって）より読みやすくなりif a, b, cます。他の例はprint x format f、i from s to f by d while c do b、log x base b、solve e using m、x between y and zなど、</p>        
+
       <p lang="en">Sometimes arguments may be frequently used constants, e.g.,
         <code>for i from 1 to n by 1 while true do b</code>. If an argument is uniquely identified by its preceding delimiter, an obvious trick is to permit the omission of
         that argument and its token to denote that a default value should be used. Thus, we may abbreviate the previous example
@@ -621,6 +682,9 @@
         <code>log x base 2</code>,
         <code>if x then y</code> for
         <code>if x then y else nil</code>, and so on. Note that various arguments now may be involved in associations, depending on which ones are absent.</p>
+
+        <p lang="ja" class="machine-trans">引数は頻繁に使用される定数である場合がありますfor i from 1 to n by 1 while true do b。引数がその前の区切り文字によって一意に識別される場合、明らかなトリックは、その引数とそのトークンの省略を許可して、デフォルト値が使用されるべきであることを示すことです。したがって、for i to n do b拡張Algol 68のように、前の例を省略することがあります。その他の明白なデフォルトはlog xfor log x base 2、if x then yfor if x then y else nilなどです。存在しないものに応じて、いろいろな議論が関連に関わっている可能性があることに注意してください。</p>
+
       <p lang="en">Another situation is that of the variable length parameter list, e.g.,
         <code>clear a, b, c, d</code>. Commas are more appropriate here, although again we may need more variety, as in
         <code>turn on a on b off g on m off p off t</code> (in which the unamed switches or bits are left as they are). All of these examples show that we want to be able
@@ -629,15 +693,27 @@
         the above, but for the unexpected as well. This is one reason for preferring a procedural embedding of semantics;
         we can write arbitrary code to find all the arguments when the language designer feels the need to complicate things.</p>
 
-      <h2 id="3-implementation">3. Implementation</h2>
+        <p lang="ja" class="machine-trans">別の状況は、可変長パラメータリストの状況であるclear a, b, c, d。ここではカンマがより適切ですが、ここでもturn on a on b off g on m off p off t（unamedスイッチやビットはそのままの状態で）さまざまな変更が必要です。これらの例はすべて、デフォルトパラメータと可変長パラメータリストを使って非常に様々な状況を処理できるようにしたいことを示しています。上記の例は可能性を排除するという主張はなされていないので、私たちの言語設計は上記のためだけでなく予期せぬことに対しても条項を設けなければならない。これは、セマンティクスの手続き的埋め込みを好む理由の1つです。言語設計者が事態を複雑にする必要があると感じたら、すべての引数を見つけるために任意のコードを書くことができます。</p>        
+
+      <h2 id="3-implementation" lang="en">3. Implementation</h2>
+      <h2 id="3-implementation-ja" lang="ja">3. 実装</h2>
 
       <p lang="en">In the preceeding section we argued for lexical semantics, operator precedence and a variety of ways of supplying arguments.
         In this section we reduce this to practice.</p>
+        
+        <p lang="ja" class="machine-trans">前節では、字句セマンティクス、演算子優先順位、および引数を提供するさまざまな方法について議論しました。このセクションでは、これを減らして実践します。</p>
+
       <p lang="en">To combine lexical semantics with a procedural approach, we assign to each semantic token a program called its
         <em>semantic code</em>, which contains almost all the information about the token. To translate or interpret a string
         of tokens, execute the code of each token in turn from left to right.</p>
+
+        <p lang="ja" class="machine-trans">レキシカルセマンティクスと手続き型アプローチを組み合わせるために、各セマンティックトークンに、そのトークンに関するほぼすべての情報を含むセマンティックコードと呼ばれるプログラムを割り当てます。トークンの文字列を翻訳または解釈するには、左から順に各トークンのコードを実行します。</p>
+
       <p lang="en">Many tokens will expect arguments, which may occur before or after the token. If the argument always comes before,
         as with unary postfix operators such as "!", we may parse expressions using the following one-state parser.</p>
+
+        <p lang="ja" class="machine-trans">多くのトークンは、トークンの前または後に発生する可能性がある引数を期待します。もし引数が常に前に来るなら、 "！"のような単項の後置演算子の場合と同様に、次の一状態パーザを使って式を解析するかもしれません。</p>
+
       <pre><code>                      ╔═▶▶════╗
                       ║    ┌──╨─┐
                       ║    │ q0 │
@@ -654,16 +730,25 @@
         <code>left</code>. The variable
         <code>left</code> may be consulted by the code of the next token, which will use the value of
         <code>left</code> as either the translation or value of the left-hand argument, depending on whether it is translating or interpreting.</p>
+
+        <p lang="ja" class="machine-trans">このパーサは、最初は入力の先頭に配置されます。現在のトークンのコードを実行し、結果を変数に格納しleft、入力を進め、プロセスを繰り返します。入力が使い尽くされた場合、デフォルトでパーサは停止し、の値を返しますleft。変数leftは、次のトークンのコードでleft調べることができます。次のトークンのコードは、翻訳か翻訳かによって左の引数の値またはその値を使用します。</p>
+
       <p lang="en">Alternatively, all arguments may appear on the right, as with unary prefix operators such as
         <code>log</code> and
         <code>sin</code>. In this case the code of a prefix operator can get its argument by calling the code of the following token. This
         process will continue recursively until a token is encountered (e.g., a variable or a constant) that does not require
         an argument. The code of this token returns the appropriate translation and then so does the code of each of the
         other tokens, in the reverse of the order in which they were called.</p>
+
+        <p lang="ja" class="machine-trans">代わりに、logとのような単項接頭演算子のように、すべての引数が右側に表示されることもありsinます。この場合、接頭演算子のコードは、次のトークンのコードを呼び出すことによってその引数を得ることができます。このプロセスは、引数を必要としないトークン（変数や定数など）が出現するまで再帰的に続行されます。このトークンのコードは、適切な変換を返します。そして、他の各トークンのコードは、呼び出された順序の逆になります。</p>
+
       <p lang="en">Clearly we want to be able to deal with a mixture of these two types of tokens, together with tokens having both kinds
         of arguments (infix operators). This is where the problem of association arises, for which we recommended operator
         precedence. We add a state to the parser, thus:</p>
-      <pre><code>                      ╔═▶▶════╗
+        
+        <p lang="ja" class="machine-trans">明らかに、我々は、これら2種類のトークンと、両方の種類の引数（中置演算子）を有するトークンとを混合して扱うことができるようにしたい。これは、関連の問題が発生する場所で、オペレータの優先順位を推奨します。パーサーに状態を追加すると、次のようになります。</p>
+
+        <pre><code>                      ╔═▶▶════╗
                       ║    ┌──╨─┐
                       ║    │ q0 │
                       ║    └──╥─┘
@@ -683,6 +768,9 @@
         <code>q1</code>. If a certain condition is satisfied, the parser returns to
         <code>q0</code> to process the next token; otherwise it halts and returns the value of
         <code>left</code> by default.</p>
+
+        <p lang="ja" class="machine-trans">状態から開始するq0と、パーサーはそのトークンを越えて進んだ後にトークンを解釈し、状態に入りますq1。ある条件が満たされた場合、パーサーはq0次のトークンを処理するために戻ります。それ以外の場合はleft、デフォルトでの値を停止して返します。</p>
+
       <p lang="en">We shall also change our strategy when asking for a right-hand argument, making a recursive call of the parser itself
         rather than of the code of the next token. In making this call we supply the binding power associated with the desired
         argument, which we call the
@@ -701,9 +789,15 @@
         <code>q0</code>, in which case
         <code>B</code> gets
         <code>E</code> instead.</p>
+
+        <p lang="ja" class="machine-trans">また、右の引数を求めて、次のトークンのコードではなく、パーサ自体を再帰的に呼び出すときに、戦略を変更します。この呼び出しを行う際には、rbp（right binding power）と呼ばれる、必要な引数に関連付けられたバインディング・パワーを供給します。このパーサーは、このパーサのインカネーションが実行されるときに値が固定されたままです。LBP（左側の結合力）は、入力ストリーム内の現在のトークンの所有物であり、各時刻の状態が変更され、一般的にq1入力されます。左の束縛力は、そのセマンティックコードにないトークンの唯一のプロパティです。q0私たちは必要に戻るに戻るrbp < lbp。このテストが失敗した場合、デフォルトでは、パーサはその最後の値leftを誰にでも返します。A取得EでAEBあればA読んでパーサを呼んでいましたE。テストが成功すると、パーサーは状態q0になり、その場合BはE代わりに取得されます。</p>
+
       <p lang="en">Because of the possibility of there being several recursive calls of the parser running simultaneously, a stack of
         return addresses and right binding powers must be used. This stack plays essentially the same role as the stacks
         described explicitly in other parsing schemes.</p>
+
+        <p lang="ja" class="machine-trans">同時に実行されるパーザのいくつかの再帰呼び出しが存在する可能性があるため、リターンアドレスのスタックと右バインドの出力を使用する必要があります。このスタックは、他の解析スキームで明示的に記述されたスタックと基本的に同じ役割を果たします。</p>        
+
       <p lang="en">We can embellish the parser a little by having the edge leaving
         <code>q1</code> return to
         <code>q1</code> rather than
@@ -719,6 +813,9 @@
         <code>q0 - q1</code> transition. We will call the code denoted by a token with (without) a preceding expression its
         <em>left (null) denotation</em> or
         <em>led</em> (nud). The machine becomes...</p>
+
+        <p lang="ja" class="machine-trans">私たちは、去る縁部を有することにより、パーサを少し飾ることができますq1への復帰q1ではなくをq0。エッジでq0 - q1コードを繰り返す必要があるので、これは無駄に見えるかもしれませんq1 - q1。しかし、この変更により、とstateの定義されていない、つまり定義されていない- q0との区別を利用することができますq1。つまり、遷移中に解釈されるトークンに先行する式がありますが、遷移中に解釈されるトークンはありません。直前の式を残したトークンで表されるコードを、左（ヌル）表記またはled（nud）と呼びます。マシンは次のようになります...leftq0q1q1 - q1q0 - q1</p>
+
       <pre><code>                         ┌────┐
                          │ q0 │
                          └──╥─┘
@@ -738,6 +835,9 @@
                     ╚═══◀◀══╝
 </code></pre>
       <p lang="en">or by splitting transitions and using a stack instead of variables (the state equals the variable on the stack):</p>
+
+      <p lang="ja" class="machine-trans">遷移を分割し、変数の代わりにスタックを使う（状態はスタックの変数に等しい）。</p>      
+      
       <pre><code>                    ┌────┐
                     │ q0 │
                     └──╥─┘
@@ -761,9 +861,15 @@
         <code>Y(F)</code>,
         <code>(λx.x²)(3)</code>, etc.), and
         <code>ε</code> (the empty string versus the membership relation).</p>
+
+        <p lang="ja" class="machine-trans">トークンが2つの異なるコードを示すのが理にかなっています。たとえば、のヌード-は単項マイナスを示し、その2進マイナスを示します。私たちのために同じことを行うことができる/、（分割対アルゴル68のように整数対セマフォ変換、） (（のように、構文グループ化a+(b×c)と同様に、値関数である変数または定数のアプリケーションに対して、Y(F)、(λx.x²)(3)など）、およびε（空の文字列とメンバーシップの関係）。</p>
+
       <p lang="en">A possibly more important role for nuds and leds is in error detection. If a token only has a nud and is given a left
         argument, or only has a led and is not given a left argument, or has neither, then non-existent semantic code is
         invoked, which can be arranged to result in the calling of an error routine.</p>
+
+        <p lang="ja" class="machine-trans">nudsとledsにとっておそらくより重要な役割は、エラー検出です。トークンがnudしか持たず、左の引数を与えられているか、ledを持っていて左の引数が与えられていない、またはどちらも持たない場合は、存在しないセマンティックコードが呼び出されます。エラールーチン。</p>
+
       <p lang="en">So far we have assumed that semantic code optionally calls the parser once, and then returns the appropriate translation.
         One is at liberty to have more elaborate code, however, when the code can read the input (but not backspace it),
         request and use arbitrary amounts of storage, and carry out arbitrary computations in whatever language is available
@@ -773,6 +879,9 @@
         for BNF grammars, of which some quite obscure yet brief examples exist. In fact, the argument really runs the other
         way; the cooperative language implementer can use the extra power to produce more comprehensible implementations,
         as we shall see in section 4.</p>
+
+        <p lang="ja" class="machine-trans">これまでは、セマンティックコードが任意にパーサを1回呼び出してから、適切な変換を返すことを前提としていました。しかし、コードがより複雑なコードを持つことは自由ですが、コードが入力を読み取って（バックスペースではなく）、任意の量のストレージを要求して使用し、使用可能な言語で任意の計算を実行できる（理想的な選択定義されている言語です）。これらの機能は、チューリングマシンの能力を、言語実装者が使用するのに適していると見なして、使用され、悪用されるようにします。あいまいな言語記述が書かれることができる地上のこのすべての権能に反対するかもしれないが、実用的な目的のためには、かなり不明瞭で簡単な例が存在するBNF文法についても同じ反対が成立する。実際、この議論は実際には逆の方法で実行されます。</p>
+
       <p lang="en">One use for this procedural capability is for the semantic code to read the delimiters and the arguments following
         them if any. Clearly any delimiter that might come directly after an argument should have a left binding power no
         greater than the binding power for that argument. For example, the nud of
@@ -790,12 +899,16 @@
         <code>a→b|c</code> is shorthand for
         <code>if a then b else c</code>). The ease with which mandatory and optional delimiters are dealt with constitutes one of the advantages of the
         top-down approach over the conventional methods for implementing operator precedence.</p>
+
+        <p lang="ja" class="machine-trans">この手続き能力のための1つの使用法は、セマンティックコードがデリミタおよびそれに続く引数を読み込むことである。明らかに、引数の直後に来る可能性のある区切り文字は、その引数の束縛力よりも大きい左の束縛力を持たないはずです。例えばif、コンテキストif a then b else cで遭遇した場合、nudはパーサを呼び出し、存在aすることを確認しthen、進んで、パーサーを呼び出し、存在bすればテストelseし、そうであれば進んでパーザを3回呼び出すことができる。（これは通常の方法で "他のものを取り除く"を解決します。）のヌードは(、パーサを呼び出し、それ)が存在するかどうかを単にチェックし、入力を進めます。デリミタには複数の親があり、セマンティックコードでも|nud（絶対値は 'in |x|'のように）と2つの親自体と '→'（a→b|c省略形はどこか）を持つ可能性がありif a then b else cます。必須およびオプションのデリミタが処理されることの容易さは、オペレータ優先順位を実装するための従来の方法よりもトップダウン手法の利点の1つを構成します。</p>
+
       <p lang="en">The parser's operation may perhaps be better understood graphically. Consider the example
         <code>if 3*a + b!↑-3 = 0 then print a + (b-1) else rewind</code>. We may exhibit the tree recovered by the parser from this expression as in the diagram below. The tokens encountered
         during one incarnation of the parser are enclosed in a dotted circle, and are connected via down-and-left links,
         while calls on the parser are connected to their caller by down-and-right links. Delimiters label the links of the
         expression they precede, if any. The no-op
         <code>(</code> is included, although it is not really a semantic object.</p>
+        <p lang="ja" class="machine-trans">パーサーの操作は、おそらくグラフィカルに理解されるかもしれません。例を考えてみましょうif 3*a + b!↑-3 = 0 then print a + (b-1) else rewind。以下の図のように、この式からパーサによって復元されたツリーを表示することがあります。パーザの1つの化身の間に遭遇したトークンは、点線の円で囲まれ、左下のリンクを介して接続され、パーサーのコールは右下のリンクによって発信者に接続されます。デリミタは、もしあれば、前にある式のリンクにラベルを付けます。(実際に意味論的オブジェクトではありませんが、no-op は含まれています。</p>
       <pre><code>                          ┌┄┄┄┄┐   else ┌┄┄┄┄┄┄┄┄┐
                           ┆ if ╞════════╡ rewind ┆
                           └┄┄╥┄┘        └┄┄┄┄┄┄┄┄┘
@@ -832,10 +945,16 @@
         the programs are very simple, and only call the parser once, this environment gives us no more information than if
         we had semantic tokens themselves on the stack. When we consider more complicated sorts of constructions such as
         operators with various default parameters the technique becomes more interesting.</p>
+
+        <p lang="ja" class="machine-trans">ここで説明するアプローチと通常の演算子優先順位スキームとの主な違いは、Floyd演算子優先順位パーサーをトップダウンで動作するように変更し、スタックを再帰的に実装することです。これは再帰的降下と呼ばれる手法です。再帰に対処するためにスタックを実装する必要がある場合、これは価値がないように見えます。しかし、再帰的降下の重要な特性は、スタックエントリが単なる演算子やオペランドではなく、再帰的にパーサを呼び出したプログラムの環境であることです。プログラムが非常にシンプルで、パーサを一度呼び出すだけでは、スタック上にセマンティックトークンが存在する場合よりも、この環境では情報が得られません。</p>
+
       <p lang="en">While the above account of the algorithm should be more or less self-explanatory, it may be worth while summarizing
         the properties of the algorithm a little more precisely.</p>
 
-      <h4 id="definition">Definition</h4>
+        <p lang="ja" class="machine-trans">アルゴリズムの上記の説明は、多かれ少なかれ自明であるべきですが、アルゴリズムの特性をもう少し正確に要約すると価値があるかもしれません。</p>        
+
+      <h4 id="definition" lang="en">Definition</h4>
+      <h4 id="definition-ja" lang="ja">定義</h4>
 
       <p lang="en">An
         <em>expression</em> is a string
@@ -848,7 +967,10 @@
           <code>S</code> relative to</em>
         <code>E</code>.</p>
 
-      <h4 id="properties">Properties</h4>
+        <p lang="ja" class="machine-trans">式が文字列であるSトークンが存在するように、tそして環境Eパーサはの先頭に入力して開始された場合はここでSt、それは時に入力して停止しますt、と返すの解釈Sに相対 E。</p>
+
+<h4 id="properties" lang="ja">Properties</h4>
+<h4 id="properties-ja" lang="en">特性</h4>
 
       <ol>
         <li>
@@ -860,7 +982,10 @@
             <code>t</code> is a led then at the beginning of the expression of which
             <code>left</code> was the interpretation when the code of
             <code>t</code> started.</p>
-        </li>
+
+            <p lang="ja" class="machine-trans">トークンのセマンティックコードtが実行されると、それはそのトークンのすぐ右に位置付けられた入力から始まり、入力の最終位置の直前で終わる式の解釈を返し、tif tがnud 、または場合tは、最初のleftコードのt開始時に解釈されたの表現の先頭に導かれています。</p>
+
+          </li>
         <li>
           <p lang="en">When the parser returns the interpretation of an expression
             <code>S</code> relative to environment
@@ -868,23 +993,37 @@
             <code>S</code> is immediately followed by a token with
             <code>lbp ≦ rbp</code> in
             <code>E</code>.</p>
+
+            <p lang="ja" class="machine-trans">パーサーがS環境Eに関連した式の解釈を返すと、S直後にlbp ≦ rbpin というトークンが続きますE。</p>
+            
         </li>
         <li>
           <p lang="en">The led of a token is called only if it immediately follows an expression whose interpretation the parser has assigned
             to
             <code>left</code>.</p>
+
+            <p lang="ja" class="machine-trans">トークンの導出は、パーサーが割り当てた式がすぐに続く場合にのみ呼び出されleftます。</p>
+            
         </li>
         <li>
           <p lang="en">The
             <code>lbp</code> of a token whose led has just been called is greater than the
             <code>rbp</code> of the current environment.</p>
+
+            <p lang="ja" class="machine-trans">lbpそのLEDだけよりも大きいと呼ばれてきたトークンのrbp現在の環境の。</p>
+            
         </li>
         <li>
           <p lang="en">Every expression is either returned by the parser or given to the following led via
             <code>left</code>.</p>
+
+            <p lang="ja" class="machine-trans">すべての式は、パーサーによって返されるか、または次のled viaに渡されますleft。</p>
+            
         </li>
         <li>
           <p lang="en">A token used only as a nud does not need a left binding power.</p>
+          <p lang="ja" class="machine-trans">nudとしてのみ使用されるトークンには、左バインドの権限は必要ありません。</p>
+
         </li>
       </ol>
       <p lang="en">These properties are the ones that make the algorithm useful. They are all straightforward to verify. Property (i)
@@ -896,7 +1035,10 @@
         <code>left</code> by calling a nud which does not know the expression is there. Property (vi) says that binding powers are only relevant
         when an argument is involved.</p>
 
-      <h2 id="4-examples">4. Examples</h2>
+        <p lang="ja" class="machine-trans">これらのプロパティは、アルゴリズムを有効にするプロパティです。彼らはすべて検証するのは簡単です。プロパティ（i）は、セマンティックトークンが、ツリーをルートとする式の右端から入力ポインタをプッシュすることを示しています。プロパティ（ii）、（iv）、（v）は、2つの可能な運命を完全に説明していますleft。プロパティ（iii）は、ledのコードが実行されるときに、左辺の引数が解釈されることを保証しleftます。nudの前には式がないという保証はありません。代わりに、プロパティ（v）leftは、表現が存在しないことを知らないnudを呼び出すことによって、式を失うのを防ぎます。プロパティ（vi）は、拘束力は引数が関係している場合にのみ関連があると言います。</p>
+
+      <h2 id="4-examples" lang="en">4. Examples</h2>
+      <h2 id="4-examples-ja" lang="ja">4. 例</h2>
 
       <p lang="en">For the examples we shall assume that
         <code>lbp</code>,
@@ -911,6 +1053,9 @@
         <code>led</code> runs, its left hand argument's interpretation is the value of the variable
         <code>left</code>, which is local to the parser calling that
         <code>led</code>.</p>
+
+        <p lang="ja" class="machine-trans">例については、我々はそれを負うlbp、nudとled本当に機能しているlbp(token)、nud(token)とled(token)。パーサを呼び出して同時にパーサrbpの環境に値を設定parse(rbp)するにrbpは、パラメータとして渡します。次にled実行すると、左辺の引数の解釈は変数の値ですleft。これは、それを呼び出すパーサーにとってローカルですled。</p>
+        
       <p lang="en">Tokens without an explicit
         <code>nud</code> are assumed to have for their
         <code>nud</code> the value of the variable
@@ -918,6 +1063,9 @@
         <code>led</code>,
         <code>noled</code>. Also the variable
         <code>self</code> will have as value the token whose code is missing when the error occurs.</p>
+
+        <p lang="ja" class="machine-trans">明示のないトークンは、nud彼らのために持っていると想定されているnud変数の値nonud、およびそのためled、noled。また、変数selfは、エラーが発生したときにコードが欠落しているトークンを値として持ちます。</p>
+        
       <p lang="en">In the language used for the semantic code, we use
         <code>a ← b</code> to define the value of expression
         <code>a</code> to be the value of expression
@@ -936,7 +1084,10 @@
         <code>a</code>, e.g.
         <code>'1+1'</code> must be evaluated twice to yield
         <code>2</code>.</p>
-      <p lang="en">A string
+
+        <p lang="ja" class="machine-trans">セマンティックコードで使用される言語ではa ← b、expression aの値をexpressionの値b（bそれ自身ではない）に定義するために使用します。また、の価値はのa ← bですb。代入によって明示的に定義されていないか、または手続き定義によって暗黙的に定義されていない限り、式の値はそれ自身です。例えば、の値3は3、の1+1です2。値がそれ自体で'a'ある式を意味するように書く。たとえば、値とは異なる。例えば、yieldを得るために2回評価する必要がある。aaa'1+1'2</p>
+        
+        <p lang="en">A string
         <code>x</code> is written
         <code>"x"</code> this differs from
         <code>'x'</code> only in that
@@ -953,10 +1104,19 @@
         <code>check x</code> for
         <code>if token = x then advance else (print "missing"; print x; halt)</code>. Everything else should be self-explanatory. (Since this language is the one implemented in the second example,
         it will not hurt to see it defined and used during the first.)</p>
+
+        <p lang="ja" class="machine-trans">文字列xが書かれて"x"いるのは、これがトークンであると仮定さ'x'れているものxとは異なるため、ofの値は一般的には評価されない"1+1"トークンです。評価するには、の値を返します。の値が代わりに必要な場合は、書き込みます。（これらは、副作用のためのものです。）我々は書くために。他のすべては自明でなければなりません。（この言語は2番目の例で実装されている言語なので、最初の例では定義されて使用されています。1+12abba;baa&lt;bcheck xif token = x then advance else (print "missing"; print x; halt)</p>
+        
       <p lang="en">We give specifications, using this approach, of an on-line theorem prover, and a fragment of a small general-purpose
         programming language. The theorem prover is to demonstrate that this approach is useful for other applications than
         just programming languages. The translator demonstrates the flexibility of the approach.</p>
-      <p lang="en">For the theorem prover's semantics, we assume that we have the following primitives available:</p>
+
+        <p lang="ja" class="machine-trans">このアプローチを使用して、オンライン定理証明者と小さな汎用プログラミング言語の断片を指定します。定理証明者は、このアプローチがプログラミング言語だけでなく他のアプリケーションにも有用であることを証明することです。翻訳者は、このアプローチの柔軟性を実証しています。</p>
+
+        <p lang="en">For the theorem prover's semantics, we assume that we have the following primitives available:</p>
+
+        <p lang="ja" class="machine-trans">定理証明者のセマンティクスについては、以下のプリミティブが利用可能であると仮定します。</p>
+        
       <ol>
         <li>
           <p lang="en">
@@ -964,6 +1124,9 @@
             <code>O<sup>k</sup>1<sup>k</sup></code> and also doubles
             <code>k</code>, assumed
             <code>1</code> initially.</p>
+
+            <p lang="ja" class="machine-trans">generate; これはビットストリングを返し、また、最初は2倍になります。Ok1kk1</p>
+            
         </li>
         <li>
           <p lang="en">
@@ -977,17 +1140,30 @@
             cycling until both strings are exhausted simultaneously. Boole is not defined for strings of other than 0's and
             1's.
           </p>
+
+          <p lang="ja" class="machine-trans">boole(m,x,y)：文字列のビット単位のブール組み合わせを形成xし、yここで、m明白な方法（内組み合わせを指定する4ビットのストリングであり1000 = and、1110 = or、1001 = eqvなど）。一方の弦がもう一方の弦よりも先に使い果たされると、疲れた弦の始まりから弦が連続し、両方の弦が同時に使い尽くされるまでサイクルが繰り返されます。ブールは、0と1以外の文字列には定義されていません。</p>
+          
         </li>
         <li>
           <p lang="en">
             <code>x isvalid</code>: a predicate that holds only when
             <code>x</code> is a string of all ones.</p>
+
+            <p lang="ja" class="machine-trans">x isvalid：xすべての文字列であるときのみ保持する述語。</p>
+
+
         </li>
       </ol>
       <p lang="en">We shall use these primitives to write a program which will read a zero-th order proposition, parse it, determine the
         truth-table column for each subtree in the parse, and print "theorem" or ”non-theorem" when "?” is encountered at
         the end of the proposition, depending on whether the whole tree returns all ones.</p>
+
+        <p lang="ja" class="machine-trans">これらのプリミティブを使用して、0次命題を読み込み、構文解析し、解析中の各サブツリーの真理値表の列を決定し、「？」を出力するときには「定理」または「非定理」を出力するプログラムを書く。木全体がすべてのものを返すかどうかによって、命題の終わりに遭遇する。</p>
+        
       <p lang="en">The theorem prover is defined by evaluating the following expression.</p>
+
+      <p lang="ja" class="machine-trans">定理証明は、以下の式を評価することによって定義される。</p>
+      
       <pre><code>nonud   ←  'if null led(self) then nud(self) ← generate else (
                print self;
                print "has no argument"
@@ -1018,12 +1194,19 @@ nud("~") ← 'boole("0101", parse 5, "0")'
 </code></pre>
       <p lang="en">To run the theorem prover, evaluate
         <code>k←1; parse 0</code>.</p>
+        <p lang="ja" class="machine-trans">定理証明を実行するには、評価するk←1; parse 0。</p>
+        
       <p lang="en">For example, we might have the following exchange:</p>
+      <p lang="ja" class="machine-trans">たとえば、次のような交換があるとします。</p>
+
       <pre><code>(a→b)∧(b→c)→(a→c)? theorem
 a? non-theorem
 a∨~a? theorem
 </code></pre>
       <p lang="en">until we turn the machine off somehow.</p>
+
+      <p lang="ja" class="machine-trans">何とかマシンをオフにするまで。</p>
+
       <p lang="en">The first definition of the program deals with new variables; which is anything without a prior meaning that needs
         a nud. The first new variable will get the constant
         <code>01</code> for its nud, the next
@@ -1036,22 +1219,37 @@ a∨~a? theorem
         <em>its</em> left argument, and the process continues, without building up a stack of
         <code>?</code>s as
         <code>?</code> is left associative.</p>
-      <p lang="en">Next,
+
+        <p lang="ja" class="machine-trans">プログラムの最初の定義は新しい変数を扱います。これは、先験的な意味のないものであり、裸を必要とするものです。最初の新しい変数は01、nud、next 0011、then 00001111などの定数を取得します。次に、?デリミタとして動作するように定義されます。その左の引数の値に応答し（真理値表の列は命題全体で区切られた式のリストを解析する）、次の命題を処理してパーサーを呼び出し、その結果を次のレベルのパーサに返す。このパーサは、次のに渡し?としてその左引数、およびプロセスは、スタックの構築せずに、続け?てSを?左結合です。</p>
+
+        <p lang="en">Next,
         <code>(</code> is defined to interpret and return an expression, skipping the following
         <code>)</code>. The remaining definitions should be self-explanatory. The reader interested in how this approach to theorem provers
         works is on his own as we are mainly concerned here with the way in which the definitions specify the syntax and
         semantics of the language.</p>
+
+        <p lang="ja" class="machine-trans">次に、(以下をスキップして式を解釈して返すように定義されています)。残りの定義は自明でなければなりません。定理証明者の仕事へのこのアプローチがどのように関わっているか興味を持っている読者は、定義が言語の構文とセマンティクスを指定する方法を主に考えているので、それ自身である。</p>
+        
       <p lang="en">The overhead of this approach is almost negligible. The parser spends possibly four machine cycles or so per token
         (not counting lexical analysis), and the semantics can be seen to do almost nothing; only when the strings get longer
         than a computer word need we expect any significant time to be spent by the logical operations. For this particular
         interpreter, this efficiency is irrelevant; however, for a general purpose interpreter, if we process the program
         so the lexical items become pointers into a symbol table, then the efficiency of interpreting the resulting string
         would be no worse than interpreting a tree using a tree-traversing algorithm as in LISP interpreters.</p>
+
+        <p lang="ja" class="machine-trans">このアプローチのオーバーヘッドはほとんど無視できます。パーサーは、おそらくトークンごとに4つのマシンサイクルを費やします（語彙分析を数えません）。セマンティクスはほとんど何もしないことがわかります。文字列がコンピュータ・ワードよりも長くなる場合にのみ、論理演算によってかなりの時間が費やされる必要があります。この特定の通訳にとって、この効率は無関係です。しかし、一般的なインタプリタでは、字句項目がシンボルテーブルへのポインタになるようにプログラムを処理すると、結果の文字列を解釈する効率は、LISPインタプリタのようなツリートラバーシングアルゴリズムを使ってツリーを解釈することよりも悪くありません。</p>
+        
       <p lang="en">For the next example we describe a translator from the language used in the above to trees whose format is that of
         the internal representation of LISP s-expressions, an ideal intermediate language for most compilers.</p>
+
+        <p lang="ja" class="machine-trans">次の例では、上で使用した言語から、ほとんどのコンパイラにとって理想的な中間言語であるLISP s-expressionsの内部表現のものであるツリーへのトランスレータについて説明します。</p>
+        
       <p lang="en">In the example we focus on the versatility the procedural approach gives us, and the power to improve the descriptive
         capacity of the metalanguage we get from bootstrapping. Some of the verbosity of the theorem prover can be done away
         with in this way.</p>
+
+        <p lang="ja" class="machine-trans">この例では、手続き型アプローチが提供する多才性と、ブートストラップから得られるメタ言語の記述能力を向上させる力に焦点を当てます。定理証明者の冗長性のいくつかは、このようにして排除することができます。</p>
+        
       <p lang="en">We present a subset of the definitions of tokens of the language L; all of them are defined in L, although in practice
         one would begin with a host language H (say the target language, here LISP) and write as many definitions in H as
         are sufficient to define the reast in L. We do not give the definitions of
@@ -1078,6 +1276,9 @@ a∨~a? theorem
         <code>(a getlist b)</code> parses a list of expressions delimited by
         <code>a</code>s, parsing each one by calling
         <code>parse b</code>, and it returns a LISP list of the results.</p>
+
+        <p lang="ja" class="machine-trans">言語Lのトークンの定義のサブセットを提示する。それらのすべてはLで定義されていますが、実際にはホスト言語H（ターゲット言語、ここではLISPとします）で始まり、Lでの収穫を定義するのに十分な数のHをHで記述します。定義はnilfix、prefix、infixまたはinfixrここに。ただし、適切なオブジェクトへの割り当てを実行します。例えば(nilfix a b)行いnud(a)←'b'、(prefix a b c)設定bp←bperfomring前にnud(a)←'c'、(infix a b c)同じん(prefix a b c)LEDが代わりにしても定義されていることを除いてはlbp(a)←b行われており、infixrのようなものであるinfixことを除いてbp←b-1代わりますbp←b。この変数bpは、読み込み時にパーサーを呼び出すために使用できますc。また、(delim x)そうlbp(x)←0です。この関数(a getlist b)は、asで区切られた式のリストを解析し、それぞれを呼び出して解析しparse b、結果のLISPリストを返します。</p>
+        
       <p lang="en">The object is to translate, for example,
         <code>a+b</code> into
         <code>(PLUS a b)</code>,
@@ -1092,6 +1293,9 @@ a∨~a? theorem
         <code>[</code> to build them;
         <code>[a, b,...,c]</code> translates into
         <code>(LIST a b ... c)</code>.</p>
+
+        <p lang="ja" class="machine-trans">オブジェクトは、例えば、翻訳することですa+bへ(PLUS a b)、a;bへ(PROG2 a b)、a&amp;bへ(PROG2 nil a b)、-aへ(MINUS a)、λx,y,...,z;aへ(LAMBDA (x y ... z) a)、等が挙げられる。これらのターゲット・オブジェクトはLISPリストされているので、我々が使用する[それらを構築します。[a, b,...,c]に翻訳する(LIST a b ... c)。</p>
+        
       <pre><code>nilfix  right          ["PARSE", bp] $
 infixr  ;           1  ["PROG2", left, right] $
 infixr  &amp;           1  ["PROG2", nil, left, right] $
@@ -1137,46 +1341,75 @@ infix   &lt;           10 is "LESSP" $
 infix   &gt;           10 is "GREATERP"
 </code></pre>
       <p lang="en">and so on.</p>
+
+      <p lang="ja" class="machine-trans">等々。</p>
+      
       <p lang="en">The reader may find some of the bootstrapping a little confusing. let us consider the definitions of
         <code>right</code> and
         <code>+</code>. The former is equivalent to
         <code>nud(right) ← '["PARSE", bp]'</code>.</p>
+
+        <p lang="ja" class="machine-trans">読者はブートストラップのいくつかを少し混乱させるかもしれません。私たちは、の定義を考えてみましょうrightと+。前者はと同等nud(right) ← '["PARSE", bp]'です。</p>
+        
       <p lang="en">The latter is equivalent to
         <code>nud(+) ← 'parse(20)' and led(+) ← '["PLUS", left, parse(20)]</code>, because when the nud of right is encountered while reading the definitions of
         <code>+</code>, it is evaluated by the parser in an environment where
         <code>bp</code> is
         <code>20</code> (assigned by prefix/infix).</p>
+
+        <p lang="ja" class="machine-trans">後者は、と等価であるnud(+) ← 'parse(20)' and led(+) ← '["PLUS", left, parse(20)]の定義を読みながら右のNUDに遭遇したときので、+それは環境にパーサーによって評価さbpれる20（接頭辞/中置によって割り当てられました）。</p>
+        
       <p lang="en">It is worth noting how effectively we made use of the bootstrapping capability in defining
         <code>is</code>, which saved a considerable amount of typing. With more work, one could define even more exotic facilities. A useful
         one would be the ability to describe the argument structure of operators using regular expressions.</p>
+
+        <p lang="ja" class="machine-trans">ブートストラップ機能をいかに効果的に使用して定義することが重要であることに注目してください。これはisかなりの量のタイピングを節約しました。より多くの作業で、さらにエキゾチックな施設を定義することができます。有用なものは、正規表現を使用して演算子の引数構造を記述する能力です。</p>
+        
       <p lang="en">The
         <code>is</code> facility is more declarative than imperative in flavor, even though it is a program. This is an instance of the
         boundary between declaratives and imperatives becoming fuzzy. There do not appear to be any reliable ways of distinguishing
         the two in general.</p>
-      <h2 id="5-conclusions">5. Conclusions</h2>
+
+        <p lang="ja" class="machine-trans">このis施設はプログラムであるにもかかわらず、味の絶対的よりも宣言的です。これは宣言と命令の境界が曖昧になっている例です。一般的に2つを区別する信頼できる方法はないようです。</p>
+        
+      <h2 id="5-conclusions" lang="en">5. Conclusions</h2>
+      <h2 id="5-conclusions-ja" lang="ja">5. Conclusions</h2>
       <p lang="en">We argued that BNF-oriented approaches to the writing of translators and interpreters were not enjoying the success
         one might wish for. We recommended lexical semantics, operator precedence and a flexible approach to dealing with
         arguments. We presented a trivial parsing algorithm for realizing this approach, and gave examples of an interpretive
         theorem prover and a trans- lator based on this approach.</p>
+
+        <p lang="ja" class="machine-trans">私たちは、翻訳者と通訳の執筆に対するBNF指向のアプローチは、望むかもしれない成功を楽しんでいないと主張した。語彙セマンティクス、演算子の優先順位、および引数を扱うための柔軟なアプローチをお勧めしました。この手法を実現するための簡単な構文解析アルゴリズムを提示し、この手法に基づく解釈定理証明器と変換器の例を示した。</p>
+        
       <p lang="en">It is clear how this approach can be used by translator writers. The modularity of the approach also makes it ideal
         for implementing extensible languages. The triviality of the parser makes it easy to implement either in software
         or hardware, and efficient to operate. Attention was paid to some aspects of error detection, and it is clear that
         type checking and the like, though not exemplified in the above, can be handled in the semantic code. And there is
         no doubt that the procedural approach will allow us to do anything any other system could do, although conceivably
         not always as conveniently.</p>
+
+        <p lang="ja" class="machine-trans">翻訳者の作者がこのアプローチをどのように使用できるかは明らかです。このアプローチのモジュール性はまた、拡張可能な言語の実装に理想的です。パーサーの簡潔さは、ソフトウェアまたはハードウェアのいずれかで実装することを容易にし、効率的に動作させます。エラー検出のいくつかの点に注意が払われており、上記で例示されていないが、型チェックなどがセマンティックコードで処理できることは明らかである。そして、手続き的アプローチが他のどのシステムでもできることは何でもできることは間違いありませんが、いつも便利であるとは限りません。</p>
+        
       <p lang="en">The system has so far found two practical applications. One is as the "front-end" for the SCRATCH-PAD system of Greismer
         and Jenks at IBM Yorktown Heights. The implementation was carried out by Fred Blair. The other application is the
         syntactic component of Project MAC's Mathlab system at MIT, MACSYMA, where this approach added to MACSYMA extension
         facilities not possible with the previous precedence parser used in MACSYMA. The implementer was Michael Genesreth.</p>
 
-      <h2 id="6-acknowledgments">6. Acknowledgments</h2>
+        <p lang="ja" class="machine-trans">このシステムはこれまでに2つの実用的な用途を見出している。1つは、IBM Yorktown HeightsのGreismerとJenksのSCRATCH-PADシステムの「フロントエンド」です。実施はFred Blairによって行われた。もう1つのアプリケーションは、MIT、MACSYMAのProject MACのMathlabシステムの構文コンポーネントです。このアプローチでは、MACSYMAで使用されていた以前の優先パーザでは不可能なMACSYMA拡張機能が追加されています。実装者はMichael Genesrethでした。</p>
+        
+
+      <h2 id="6-acknowledgments" lang="en">6. Acknowledgments</h2>
+      <h2 id="6-acknowledgments-ja" lang="ja">6. 謝辞</h2>
 
       <p lang="en">I am indebted to a large number of people who have discussed some of the ideas in this paper with me. In particular
         I must thank Michael Fischer for supplying many valuable ideas relevant to the implementation, and for much programming
         help in defining and implementing CGOL, a pilot language initially used to break in and improve the system, but which
         we hope to develop further in the future as a desirable programming language for a large number of classes of users.</p>
 
-      <h2 id="7-references">7. References</h2>
+        <p lang="ja" class="machine-trans"></p>
+
+      <h2 id="7-references" lang="en">7. References</h2>
+      <h2 id="7-references-ja" lang="ja">7. 参考文献</h2>
 
       <p lang="en">Aho, A.V. 1968. Indexed Grammars. JACM
         <u>15</u> 4, 647-671</p>
