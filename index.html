@@ -273,35 +273,28 @@
           
       <p lang="en">When a given class of phrases is characterized unambiguously by the presence of a particular token, the effect is the same, but this is not always the case in a BNF-style semantic specification, and I conjecture that the difficulty of learning and using a given language specified with a BNF grammar increases in proportion to the number of rules not identifiable by a single token. The existence of an operator grammar [Floyd 1963] for Algol 60 provides a plausible account of why people succeed in learning Algol, a process known not to be strongly correlated with whether they have seen the BNF of Algol.</p>
 
-        <p lang="ja" class="machine-trans">与えられたクラスのフレーズが特定のトークンの存在によって明確に特徴づけられるとき、その効果は同じであるが、これはBNFスタイルのセマンティック仕様においてかならずしも当てはまるとは限らず、 BNF文法で記述された言語を学習し理解する難しさは、単一のトークンでは識別できない規則の数に比例して増加するのではないかと推測しています。Algol 60の演算子文法[Floyd 1963]の存在は、Algolの学習に成功した理由を説明します、人々がAlgolのBNFを見たかどうかと強く相関しないことが知られている。</p>
+        <p lang="ja">与えられたクラスのフレーズが特定のトークンの存在によって明確に特徴づけられるとき、効果は同じであるが、これはBNFスタイルのセマンティック仕様においてかならずしも当てはまるとは限らず、 BNF文法で記述された言語を学習し理解する難しさは、単一のトークンでは識別できない規則の数に比例して増加するのではないかと推測しています。Algol 60の演算子文法[Floyd 1963]の存在が、人々がAlgolのBNFを見たかどうかと強く相関しないことが知られているAlgolの学習に成功した理由についての説得力のある説明を提供します。</p>
   
-        <p lang="en">There are two advantages of separating semantics from syntax in this way. First, phrase-structure rules interact more
-        strongly than individual tokens because rules can share non-terminals whereas tokens have nothing to share. So our
-        assignment of semantics to tokens has a much better chance of being modular than an assignment to rules. Thus one
-        can tailor the language to one's needs by selecting from a library, or writing, the semantics of just those objects
-        that one needs for the task in hand, without having to worry about preordained interactions between two semantic
-        objects at the syntactic level. Second, the language designer is free to develop the syntax of his language without
-        concern for how it will affect the semantics; instead, the semantics will affect decisions about the syntax. The
-        next two issues (linearizing trees and annotating tokens) illustrate this point well. Thus syntax is the servant
-        of semantics, an appropriate relationship since the substance of the message is conveyed with the semantics, Variations
-        in syntax being an inessential trimming added on human-engineering grounds.</p>
+        <p lang="en">There are two advantages of separating semantics from syntax in this way. First, phrase-structure rules interact more strongly than individual tokens because rules can share non-terminals whereas tokens have nothing to share.
+           So our assignment of semantics to tokens has a much better chance of being modular than an assignment to rules. 
+           Thus one can tailor the language to one's needs by selecting from a library, or writing, the semantics of just those objects that one needs for the task in hand, without having to worry about preordained interactions　between two semantic objects at the syntactic level. 
+           Second, the language designer is free to develop the syntax of his language without concern for how it will affect the semantics; instead, the semantics will affect decisions about the syntax. 
+           The next two issues (linearizing trees and annotating tokens) illustrate this point well. Thus syntax is the servant of semantics, an appropriate relationship since the substance of the message is conveyed with the semantics, Variations in syntax being an inessential trimming added on human-engineering grounds.</p>
 
-        <p lang="ja" class="machine-trans">このように構文からセマンティクスを分離する2つの利点があります。第1に、フレーズ構造規則は、ルールが非終端記号を共有することができる一方、トークンは何も共有しないので、個々のトークンよりも強く相互作用する。したがって、トークンへのセマンティクスの割り当ては、ルールへの割り当てよりもモジュール化の可能性がはるかに高くなります。したがって、構文レベルでの2つの意味論的オブジェクト間の事前に定義された相互作用を心配することなく、手元にあるタスクに必要なオブジェクトの意味論をライブラリから選択するか、または書くことによって、言語をニーズに合わせることができます。第二に、言語設計者は、セマンティクスにどのように影響するかに関わらず、自由に言語の構文を開発することができます。代わりに、セマンティクスは構文に関する決定に影響します。次の2つの問題（ツリーを線形化し、トークンに注釈を付ける）は、この点をよく示しています。したがって、構文は、意味論のサーバントであり、メッセージの内容が意味論と一緒に伝達されるので適切な関係であり、構文のバリエーションは人間工学的根拠に加えられた不可欠なトリミングである。</p>
+        <p lang="ja" >このように構文からセマンティクスを分離する利点は２つあります。第1に、フレーズ構造規則は、トークンは何も共有しないのに対してルールは非終端記号を共有することができるので、個々のトークンよりも強く相互作用する。したがって、トークンへのセマンティクスの割り当ては、ルールへの割り当てよりもモジュール化の可能性がはるかに高くなります。
+          したがって、構文レベルでの2つのセマンティック・オブジェクト間の事前定義された相互作用を考慮することなく、手元にあるタスクに必要なオブジェクトのセマンティクスをライブラリから選択するか、または書くことによって、言語をニーズに合わせることができます。第二に、言語設計者は、セマンティクスにどのように影響するかに関わらず、自由に言語の構文を開発することができます。代わりに、セマンティクスは構文に関する決定に影響します。次の2つの問題（ツリーを線形化し、トークンに注釈を付ける）は、この点をよく示しています。したがって、構文は、セマンティクスの召使いであり、メッセージの内容がセマンティクスと一緒に伝達されるので適切な関係であり、人間工学的根拠に加えられ不要物を取り除かれた構文のバリエーションです。</p>
           
-      <p lang="en">The idea of lexical semantics is implicit in the usual approach to macro generation, although the point usually goes
-        unmentioned. I suspect many people find syntax macros [Leavenworth 1966] appealing for reasons related to the above
-        discussion.
+      <p lang="en">The idea of lexical semantics is implicit in the usual approach to macro generation, although the point usually goes unmentioned. I suspect many people find syntax macros [Leavenworth 1966] appealing for reasons related to the above discussion.
       </p>
-      <p lang="ja" class="machine-trans">レキシカルセマンティクスの考え方は、マクロ生成の通常のアプローチでは暗黙的ですが、この点は通常は言及されていません。私は、上記の議論に関連して多くの人々が構文マクロ[Leavenworth 1966]を魅力的だと思っています。</p>
+      <p lang="ja">レキシカル・セマンティクスの考え方は、通常マクロ生成のアプローチは暗黙的ですが、この点は通常は言及されていません。私は、多くの人々は上記の議論に関連した理由によって構文マクロ[Leavenworth 1966]を魅力的だと感じていると推測します。</p>
 
       <h3 id="22-conventions-for-linearizing-trees" lang="en">2.2 Conventions for Linearizing Trees</h3>
 
       <h3 id="22-conventions-for-linearizing-trees-ja" lang="ja">2.2 ツリーの線形化の規約</h3>
 
       <p lang="en">We argued at the beginning of section 2 that in order to economize on names the programmer resorted to the use of trees.
-        The precedent has a long history of use of the same trick in natural language. Of necessity (for one-dimensional
-        channels) the trees are mapped into strings for transmission and decoded at the other end. We are concerned with
-        both the human and computer engineering aspects of the coding. We may assume the trees look like, e.g.</p>
+        The precedent has a long history of use of the same trick in natural language. Of necessity (for one-dimensional channels) the trees are mapped into strings for transmission and decoded at the other end. We are concerned with both the human and computer engineering aspects of the coding. We may assume the trees look like, e.g.</p>
+
         <p lang="ja" class="machine-trans">我々は、セクション2の初めに、名前を節約するために、プログラマがツリーの使用に頼ったと主張した。先例は自然言語で同じトリックを使用してきた長い歴史を持っています。必要性（1次元チャネルの場合）のために、ツリーは送信のために文字列にマッピングされ、他端でデコードされる。私たちは、コーディングの人間工学とコンピュータ工学の両方に関心を持っています。私たちは、木のように見えるかもしれません。</p>
           
       <pre><code>                            ┌───────┐
